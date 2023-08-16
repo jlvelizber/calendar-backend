@@ -1,6 +1,7 @@
 const express = require('express');
 const dbConnection = require('./database/configuration');
 require('dotenv').config()
+const PORT = process.env.APP_PORT || 4000
 const cors = require('cors')
 
 
@@ -27,6 +28,6 @@ app.use('/api/events', require('./routes/events'))
 
 
 
-app.listen(process.env.APP_PORT , () => {
-    console.log(`servidor corriendo en ${process.env.APP_PORT}`);
+app.listen(PORT, (port) => {
+    console.log(`servidor corriendo en ${PORT}`);
 });
